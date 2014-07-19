@@ -8,7 +8,6 @@ __all__ = [
     'JsonFormatter'
 ]
 
-import os
 import json
 import logging
 from logging import (Logger,
@@ -47,8 +46,6 @@ _common_fields = []
 
 
 def common_names_filename(filename):
-    filename = os.path.join(os.path.dirname(__file__), filename)
-
     global _common_fields
     try:
         with open(filename) as fields_file:

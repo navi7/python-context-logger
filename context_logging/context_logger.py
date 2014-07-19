@@ -106,6 +106,5 @@ class ContextLogger(logging.Logger):
             kwargs['extra']['status'] = kwargs['status']
             del kwargs['status']
 
-        #super(ContextLogger, self)._log(level, msg, args, exc_info, extra=kwargs)
         super(ContextLogger, self)._log(level, msg, args, **kwargs)
 

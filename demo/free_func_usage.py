@@ -2,7 +2,7 @@ __author__ = 'ivan'
 
 import logging
 import context_logging  # this `patches` logging with context stuff
-context_logging.common_names_filename('../demo/common_logging_fields.json')
+context_logging.common_names_filename('common_logging_fields.json')
 
 
 @context_logging.log_context(prefix='spell', spell='run_fast', machine='mean one')
