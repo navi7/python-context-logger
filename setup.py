@@ -6,8 +6,6 @@ import codecs
 import os
 import sys
 
-import sandman
-
 here = os.path.abspath(os.path.dirname(__file__))
 
 def read(*filenames, **kwargs):
@@ -22,8 +20,8 @@ def read(*filenames, **kwargs):
 long_description = read('README.md')
 
 setup(
-    name='sandman',
-    version=sandman.__version__,
+    name='python-context-logger',
+    version='0.1',
     url='http://github.com/navi7/python-context-logger',
     license='LGPL v3',
     author='Ivan Mesic',
@@ -34,8 +32,8 @@ setup(
     author_email='ivanmesic@gmail.com',
     description='Context logging for python',
     long_description=long_description,
-    packages=['python-context-logger'],
-    include_package_data=false,
+    packages=['context_logging'],
+    include_package_data=False,
     platforms='any',
     classifiers = [
         'Programming Language :: Python',
