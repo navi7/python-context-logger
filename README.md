@@ -42,3 +42,12 @@ if __name__ == '__main__':
 Check out the demo folder for more examples.
 
 JsonLogger class is taken from https://github.com/tarass/python-json-logger
+
+
+Test it (from root project folder):
+```bash
+virtualenv venv
+source venv/bin/activate
+
+python demo/free_func_usage.py 
+```
