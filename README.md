@@ -41,3 +41,4 @@ if __name__ == '__main__':
 
 Check out the demo folder for more examples.
 
+JsonLogger class is taken from https://github.com/tarass/python-json-logger
