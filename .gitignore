@@ -1,0 +1,6 @@
+# ignore some things
+
+/venv
+.idea
+
+*.pyc
