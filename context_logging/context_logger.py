@@ -96,7 +96,10 @@ class ContextLogger(logging.Logger):
             kwargs['extra'] = ctx_values
 
         if extra is not None:
-            kwargs['extra'].update(extra)
+            if 'extra' in kwargs:
+                kwargs['extra'].update(extra)
+            else:
+                kwargs['extra'] = extra
 
         # yank the status and put it into the `extra`
         if 'status' in kwargs:
