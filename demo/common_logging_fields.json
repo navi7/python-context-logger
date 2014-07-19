@@ -1,0 +1,13 @@
+{
+  "common_fields": [
+    "func_name",
+    "levelname",
+    "machine",
+    "module_name",
+    "message",
+    "process",
+    "status",
+    "timestamp",
+    "type"
+  ]
+}
