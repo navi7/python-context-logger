@@ -108,3 +108,48 @@ class ContextLogger(logging.Logger):
 
         super(ContextLogger, self)._log(level, msg, args, **kwargs)
 
+    #
+    # HELPER methods for some standard status stuff:
+    #  OK, ERROR, CREATED, UPDATED, NOOP, BLOCKED, REJECTED, FAIL
+
+    # status field values
+    OK = 'OK'
+    ERROR = 'ERROR'
+    CREATED = 'CREATED'
+    UPDATED = 'UPDATED'
+    NOOP = 'NOOP'
+    BLOCKED = 'BLOCKED'
+    REJECTED = 'REJECTED'
+    FAIL = 'FAIL'
+
+    def ok(self, msg, *args, **kwargs):
+        kwargs['status'] = self.OK
+        self._log(logging.INFO, msg, args, **kwargs)
+
+    def error(self, msg, *args, **kwargs):
+        kwargs['status'] = self.ERROR
+        self._log(logging.ERROR, msg, args, **kwargs)
+
+    def created(self, msg, *args, **kwargs):
+        kwargs['status'] = self.CREATED
+        self._log(logging.INFO, msg, args, **kwargs)
+
+    def updated(self, msg, *args, **kwargs):
+        kwargs['status'] = self.UPDATED
+        self._log(logging.INFO, msg, args, **kwargs)
+
+    def noop(self, msg, *args, **kwargs):
+        kwargs['status'] = self.NOOP
+        self._log(logging.INFO, msg, args, **kwargs)
+
+    def blocked(self, msg, *args, **kwargs):
+        kwargs['status'] = self.BLOCKED
+        self._log(logging.INFO, msg, args, **kwargs)
+
+    def rejected(self, msg, *args, **kwargs):
+        kwargs['status'] = self.REJECTED
+        self._log(logging.INFO, msg, args, **kwargs)
+
+    def fail(self, msg, *args, **kwargs):
+        kwargs['status'] = self.FAIL
+        self._log(logging.ERROR, msg, args, **kwargs)

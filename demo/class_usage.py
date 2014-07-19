@@ -19,6 +19,8 @@ class Hitchiker(object):
     def when_is_the_towel_day(self):
         self.log.info('The towel day is held every year on 25 May')
 
+        self.log.ok("It\'s OK buddy, the towel is safe.")
+
 
 def main():
     hitcher = Hitchiker()
