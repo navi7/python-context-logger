@@ -122,6 +122,7 @@ def context_logger(name=None, prefix=None):
                 class_name = self.__class__.__name__.lower()
 
             self.log = logging.getLogger(name or class_name)
+            self.log.prefix = prefix
             if not self.log.common_fields:
                 self.log.common_fields = _common_fields
 

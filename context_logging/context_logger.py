@@ -49,7 +49,7 @@ class ContextLogger(logging.Logger):
         """
         ctx = {}
         for context in self._contexts:
-            ctx.update(self._apply_prefix(context.prefix, **context.get_values()))
+            ctx.update(self._apply_prefix(context.prefix or self.prefix, **context.get_values()))
 
         if len(self._contexts) > 0:
             try:
@@ -81,7 +81,7 @@ class ContextLogger(logging.Logger):
         ctx_values = self.get_current_values()
 
         # currently active prefix
-        prefix = self._contexts[-1].prefix if len(self._contexts) > 0 else None
+        prefix = self._contexts[-1].prefix if len(self._contexts) > 0 else self.prefix
         if 'extra' in kwargs:
             kwargs['extra'] = self._apply_prefix(prefix, **kwargs['extra'])
             kwargs['extra'].update(ctx_values)
